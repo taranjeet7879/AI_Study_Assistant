@@ -1,0 +1,4 @@
+Flask
+groq
+python-dotenv
+PyPDF2
