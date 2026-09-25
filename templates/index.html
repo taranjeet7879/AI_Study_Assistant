@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Study Assistant</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="hero">
+
+        <h1>✨ AI Study Assistant</h1>
+
+        <p>
+            Upload your PDF and let AI transform your notes
+            into summaries, MCQs, questions and revision notes.
+        </p>
+
+    </div>
+
+    <!-- UPLOAD SECTION -->
+
+    <div class="upload-wrapper">
+
+        <label for="pdfFile" class="upload-box">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <h2>Upload PDF File</h2>
+
+            <p>
+                Drag & Drop or Click Here
+            </p>
+
+            <span id="fileName">
+                No file selected
+            </span>
+
+        </label>
+
+        <input
+            type="file"
+            id="pdfFile"
+            accept=".pdf"
+            hidden
+        >
+
+    </div>
+
+    <button class="upload-btn" onclick="uploadPDF()">
+        Upload PDF
+    </button>
+
+    <!-- FILE STATUS -->
+
+    <div id="statusCard" class="status-card hidden">
+
+        <div class="status-left">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+
+                <h3>File Loaded Successfully</h3>
+
+                <p id="loadedFileName"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEATURE CARDS -->
+
+    <div class="cards">
+
+        <div class="card" onclick="generateSummary()">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <h3>Summary</h3>
+
+            <p>Generate concise notes</p>
+
+        </div>
+
+        <div class="card" onclick="generateQuestions()">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <h3>Questions</h3>
+
+            <p>Important exam questions</p>
+
+        </div>
+
+        <div class="card" onclick="generateMCQs()">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <h3>MCQs</h3>
+
+            <p>Multiple choice questions</p>
+
+        </div>
+
+        <div class="card" onclick="generateRevision()">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>Revision Notes</h3>
+
+            <p>Quick revision material</p>
+
+        </div>
+
+    </div>
+
+    <!-- ASK AI -->
+
+    <div class="ask-section">
+
+        <h2>Ask Anything From Your Notes</h2>
+
+        <textarea
+            id="question"
+            placeholder="Type your question here..."
+        ></textarea>
+
+        <button class="ask-btn"
+        onclick="askQuestion()">
+
+            Ask AI ✨
+
+        </button>
+
+    </div>
+
+    <!-- LOADER -->
+
+    <div id="loader" class="loader"></div>
+
+    <!-- OUTPUT -->
+
+    <div id="output">
+
+        AI responses will appear here...
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
